@@ -23,8 +23,10 @@ class WindowClass(QMainWindow, form_class):
 
     def changedfunction(self) :
         dataVar = QDate.currentDate()
-        self.label_date.setText("{0}",dataVar)
+        #self.label_date.setText("{0}",dataVar)
         self.label_voltage.setText("Try connect to device...")
+
+
 
 if __name__ == "__main__" :
     app = QApplication(sys.argv)
