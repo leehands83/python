@@ -1,4 +1,9 @@
 import sys
+import json
+import pandas as pd
+import pandas_datareader.data as web
+import matplotlib.pyplot as plt
+
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5 import uic
@@ -20,7 +25,10 @@ class MyWindow(QMainWindow,form_class):
     def inquiry(self):
         price = pykorbit.get_current_price("BTC")
         self.lineEdit.setText(str(price))
+        tesla = web.get_data_yahoo("TSLA",'2021-04-01')
+
         print("조회버튼 클릭")
+        print(str(tesla))
 
 
     def timeout(self):
